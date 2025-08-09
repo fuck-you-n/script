@@ -321,12 +321,12 @@ end)
 
 UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.N then
-        if ScreenGui.Visible then
+        if ScreenGui.Enabled then
             closeTween:Play()
             wait(0.3)
-            ScreenGui.Visible = false
+            ScreenGui.Enabled = false
         else
-            ScreenGui.Visible = true
+            ScreenGui.Enabled = true
             openTween:Play()
         end
     end
