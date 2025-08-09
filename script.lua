@@ -319,14 +319,12 @@ closeButton.MouseButton1Click:Connect(function()
     ScreenGui.Enabled = false
 end)
 
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end -- ignore chat/typing input
-
+UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.N then
         if ScreenGui.Visible then
             closeTween:Play()
-            task.wait(0.3)
-            ScreenGui.Visible = false -- just hides, doesn’t disable anything
+            wait(0.3)
+            ScreenGui.Visible = false
         else
             ScreenGui.Visible = true
             openTween:Play()
